@@ -1,0 +1,98 @@
+:root {
+    --primary-color: #5baa7f;
+    --secondary-color: #0b1215;
+    --white-color: #fbf5df;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 1.25rem; */
+}
+main > :not(:last-child) {
+    margin: 0 0 1.25rem 0;
+}
+h1 {
+    color: var(--primary-color);
+}
+p {
+    text-align: center;
+}
+
+.btn {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+    border-radius: 0.3125rem;
+    font-size: 0.875rem;
+    padding: 0.313rem 0.875rem;
+    margin: 2.5rem 0;
+}
+.money-img {
+    width: 150px;
+}
+.container {
+    margin: 0 auto;
+    width: 40%;
+}
+.currency {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.currency select {
+    width: 100%;
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    padding: 0.625rem 1.25rem 0.625rem 0.625rem;
+    border-radius: 0.3125rem;
+    appearance: none;
+    background: var(--white-color)
+        url(../Assets/icons/8665844_sort_down_icon.svg) no-repeat right 5% top;
+    background-size: 1rem auto, 100%;
+    text-overflow: ellipsis;
+}
+.currency input {
+    width: 100%;
+    background: transparent;
+    color: var(--white-color);
+    font-size: 2rem;
+    text-align: right;
+    -webkit-appearance: textfield;
+}
+.currency input[type='number']::-webkit-inner-spin-button,
+.currency input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+.swap-rate-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rate {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    padding: 0 0.625rem;
+}
+
+@media (max-width: 62.5em) {
+    body {
+        font-size: 0.875rem;
+    }
+    .container {
+        width: 50%;
+    }
+}
