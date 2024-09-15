@@ -76,7 +76,7 @@ select > option:hover {
     width: 100%;
     background: transparent;
     color: var(--white-color);
-    /* font-size: 2rem; */
+    font-family: inherit;
     font-size: 3cqi;
     text-align: right;
     -webkit-appearance: textfield;
