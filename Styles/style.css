@@ -95,7 +95,9 @@ select > option:hover {
     font-size: 0.875rem;
     padding: 0 0.625rem;
 }
-
+.error {
+    color: rgb(212, 74, 74);
+}
 @media (max-width: 37.5em) {
     main {
         font-size: 4cqi;

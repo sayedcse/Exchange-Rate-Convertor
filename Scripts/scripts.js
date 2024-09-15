@@ -5,7 +5,7 @@ const amountEl_two = document.getElementById('amount-two');
 
 const rateEl = document.getElementById('rate');
 const swapBtn = document.getElementById('swap');
-const API_KEY = 'YOUR API KEY';
+// const API_KEY = 'YOUR API KEY';
 
 // Fetch exchange rates & Update DOM.
 function calculate() {
@@ -17,7 +17,7 @@ function calculate() {
     fetch(URL)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
+            // const rate = data.convection_rate[currency_two];
             const rate = data[currency_one][currency_two];
 
             rateEl.innerHTML = `1 ${currency_one.toUpperCase()} = ${rate.toFixed(
@@ -25,6 +25,11 @@ function calculate() {
             )} ${currency_two.toUpperCase()}`;
 
             amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
+        })
+        .catch((err) => {
+            console.log(err);
+            rateEl.innerHTML =
+                '<p class="error">Something went wrong fetching the data!!!</p>';
         });
 }
 
