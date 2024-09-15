@@ -5,6 +5,7 @@ const amountEl_two = document.getElementById('amount-two');
 
 const rateEl = document.getElementById('rate');
 const swapBtn = document.getElementById('swap');
+const API_KEY = 'YOUR API KEY';
 
 // Fetch exchange rates & Update DOM.
 function calculate() {
@@ -12,7 +13,7 @@ function calculate() {
     const currency_two = currencyEl_two.value;
 
     fetch(
-        `https://v6.exchangerate-api.com/v6/acb592a3610a8a131bd0a714/latest/${currency_one}`
+        `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${currency_one}`
     )
         .then((res) => res.json())
         .then((data) => {
