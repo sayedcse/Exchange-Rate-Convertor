@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --primary-color: #5baa7f;
     --secondary-color: #0b1215;
@@ -10,7 +12,7 @@
     outline: none;
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'exo 2', sans-serif;
     background: var(--secondary-color);
     color: var(--white-color);
     container-type: inline-size;
