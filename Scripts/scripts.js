@@ -11,10 +11,9 @@ const API_KEY = 'YOUR API KEY';
 function calculate() {
     const currency_one = currencyEl_one.value;
     const currency_two = currencyEl_two.value;
+    const URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${currency_one}`;
 
-    fetch(
-        `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${currency_one}`
-    )
+    fetch(URL)
         .then((res) => res.json())
         .then((data) => {
             const rate = data.conversion_rates[currency_two];
