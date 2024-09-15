@@ -9,16 +9,20 @@ const API_KEY = 'YOUR API KEY';
 
 // Fetch exchange rates & Update DOM.
 function calculate() {
-    const currency_one = currencyEl_one.value;
-    const currency_two = currencyEl_two.value;
-    const URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${currency_one}`;
+    const currency_one = currencyEl_one.value.toLowerCase();
+    const currency_two = currencyEl_two.value.toLowerCase();
+    // const URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${currency_one}`;
+    const URL = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency_one}.json`;
 
     fetch(URL)
         .then((res) => res.json())
         .then((data) => {
-            const rate = data.conversion_rates[currency_two];
+            console.log(data);
+            const rate = data[currency_one][currency_two];
 
-            rateEl.innerHTML = `1 ${currency_one} = ${rate} ${currency_two}`;
+            rateEl.innerHTML = `1 ${currency_one.toUpperCase()} = ${rate.toFixed(
+                2
+            )} ${currency_two.toUpperCase()}`;
 
             amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
         });
